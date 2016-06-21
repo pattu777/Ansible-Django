@@ -1,0 +1,13 @@
+description "Gunicorn application server handling LearningDjango project"
+
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+setuid chinmaya
+setgid www-data
+chdir /home/chinmaya/Projects/LearningDjango/apps
+
+exec /home/chinmaya/Projects/LearningDjango/venv/bin/gunicorn --workers 3 --log-file /tmp/learningdjango.log --bind 0.0.0.0:8000 apps.wsgi:application
+
