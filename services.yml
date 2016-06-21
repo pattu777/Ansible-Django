@@ -1,0 +1,22 @@
+---
+
+- name: Start the web servers
+  hosts: server
+  become_user: chinmaya
+  become: true
+
+  tasks:
+    - name: Copy gunicorn conf file to remote server
+      copy: src=files/init/gunicorn dest=/etc/init/gunicorn.conf
+
+    - name: Restart gunicorn
+      service: name=gunicorn state=reloaded enabled=yes
+
+    - name: Copy nginx sites file to remote server
+      copy: src=files/config/nginx dest=/etc/nginx/sites-available/LearningDjango
+
+    - name: Link nginx sites-available to sites-enabled
+      command: sudo ln -s /etc/nginx/sites-available/LearningDjango /etc/nginx/sites-enabled
+
+    - name: Restart nginx
+      service: name=nginx state=reloaded enabled=yes
