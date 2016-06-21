@@ -1,0 +1,42 @@
+---
+
+# Project Info
+project_name: LearningDjango
+project_root: xxxx
+django_path: xxxx
+project_requirements: xxxx
+project_virtualenv: xxxx
+project_settings: xxxx
+project_repo: git@github.com:pattu777/LearningDjango.git
+
+domain_name: <personal-domain.com>
+
+# Gunicorn
+gunicorn_user: xxxxx
+gunicorn_group: xxxxx
+project_dir: xxxxx
+virtualenv: xxxx
+gunicorn_log: xxxxx
+
+# Nginx 
+nginx_static: xxxxx
+nginx_media: xxxxx
+access_log: <path/learningdjango.access.log> 
+error_log: <path/learningdjango.error.log>
+
+system_packages:
+  - build-essential
+  - git
+  - libevent-dev
+  - nginx
+  - python-dev
+  - python-setuptools
+  - openssh-server
+  - libpq-dev
+  - python-pip
+  - openssh-server
+
+python_packages:
+  - virtualenv
+  - gunicorn
+  - django
