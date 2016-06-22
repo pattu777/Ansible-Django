@@ -1,20 +1,18 @@
 ---
-
-- name: Install packages
+- name: Install packages 
   hosts: server
-  become_user: chinmaya
-  become: true
+  
   vars_files:
     - vars.yml
 
   tasks:
+    - name: Update cache
+      apt: update_cache=yes
 
     - name: Install system packages
-      apt: pkg={{ item }} update-cache=yes state=installed
+      apt: pkg={{ item }} update_cache=yes state=present
       with_items:
-          - '{{ system_packages }}' 
+          - "{{ system_packages }}" 
 
-    - name: Install python packages
-      pip: name={{ item }}
-      with_items:
-          - '{{ python_packages }}'
+    - name: Update pip
+      pip: name=pip state=latest

@@ -1,16 +1,7 @@
 ---
 
-- name: Deploy a Django project
-  hosts: server
-  become_user: chinmaya
-  become: true
-  vars_files:
-    - vars.yml
+- include: package.yml
 
-  tasks:
-    
-    - include: package.yml
+- include: django.yml
 
-    - include: django.yml
-
-    - include: services.yml
+- include: services.yml
