@@ -1,0 +1,18 @@
+---
+
+# Gunicorn settings
+gunicorn_user: xxxxxxx
+gunicorn_group: xxxxxxx
+gunicorn_project_dir: xxxxxxx
+gunicorn_virtualenv: xxxxxxx
+gunicorn_log: xxxxxxx
+gunicorn_dest_dir: /etc/init/gunicorn.conf
+
+
+# Nginx settings
+nginx_domain_name: xxxxxxx
+nginx_static: xxxxxxx
+nginx_media: xxxxxxx
+nginx_access_log: xxxxxxx
+nginx_error_log: xxxxxxx
+nginx_dest_dir: xxxxxxx

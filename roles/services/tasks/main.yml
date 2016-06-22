@@ -1,0 +1,21 @@
+---
+- name: Copy gunicorn conf file to remote server
+  template: 
+    src=gunicorn.j2 
+    dest={{ gunicorn_dest_dir}}
+  notify: restart gunicorn
+
+
+- name: Copy nginx sites file to remote server
+  template: 
+    src=nginx.j2 
+    dest={{ nginx_dest_dir }}
+  notify: restart nginx
+
+- name: Link nginx sites-available to sites-enabled
+  file:
+    src=/etc/nginx/sites-available/LearningDjango
+    dest=/etc/nginx/sites-enabled/LearningDjango
+    state=link
+  notify: reload nginx
+
