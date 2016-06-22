@@ -1,0 +1,10 @@
+---
+
+# Django Settings
+project_name: LearningDjango
+project_root: xxxxxx
+django_path: xxxxxx
+project_requirements: xxxxxx
+project_virtualenv: xxxxxx
+project_settings: "apps.settings"
+project_repo: git@github.com:pattu777/LearningDjango.git

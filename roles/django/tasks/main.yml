@@ -1,0 +1,27 @@
+---
+
+- name: Create a virtualenv and install packages from requirements.txt
+  pip:
+    virtualenv: "{{ project_virtualenv }}"
+    requirements: "{{ project_requirements }}"
+
+- name: Sync database
+  django_manage: 
+    command: makemigrations
+    app_path: "{{ django_path }}"
+    settings: "{{ project_settings }}"
+    virtualenv: "{{ project_virtualenv }}"
+
+- name: Create db models
+  django_manage: 
+    command: migrate
+    app_path: "{{ django_path }}"
+    settings: "{{ project_settings }}"
+    virtualenv: "{{ project_virtualenv }}"
+
+- name: Collect static files
+  django_manage: 
+    command: collectstatic
+    app_path: "{{ django_path }}"
+    settings: "{{ project_settings }}"
+    virtualenv: "{{ project_virtualenv }}"
