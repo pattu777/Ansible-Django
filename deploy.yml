@@ -1,7 +1,7 @@
 ---
 
 - name: Ansible playbook to deploy a Django app
-  hosts: do-server-2
+  hosts: server
 
   roles:
     - core
