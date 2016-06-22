@@ -1,7 +1,9 @@
 ---
 
-- include: package.yml
+- name: Ansible playbook to deploy a Django app
+  hosts: do-server-2
 
-- include: django.yml
-
-- include: services.yml
+  roles:
+    - core
+    - django
+    - services
