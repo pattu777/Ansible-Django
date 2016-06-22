@@ -1,0 +1,26 @@
+---
+# Packages to be installed
+system_packages:
+  - build-essential
+  - git
+  - libevent-dev
+  - nginx
+  - python-dev
+  - python-pip
+  - python-virtualenv
+  - python-setuptools
+  - python-software-properties
+  - openssh-server
+  - libpq-dev
+  - openssh-server
+  - libffi-dev
+  - tmux
+  - libssl-dev
+  - libreadline-dev 
+  - libyaml-dev 
+  - libsqlite3-dev 
+  - sqlite3 
+  - libxml2-dev 
+  - libxslt1-dev
+  - tree
+  - ipython
