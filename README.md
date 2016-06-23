@@ -1,5 +1,15 @@
 # Ansible-Django
-Ansible playbooks used to deploy [https://github.com/pattu777/LearningDjango](https://github.com/pattu777/LearningDjango) project on a remote Ubuntu server.
+Ansible playbooks used to deploy a Django project on a remote server. This playbook assumes the remote server to be debian based. I used it to deploy [https://github.com/pattu777/LearningDjango](https://github.com/pattu777/LearningDjango) project on a Digital Ocean droplet. 
+
+
+### Prerequisites
+
+* Ansible installed on your local system.
+* Passwordless setup for a user with sudo privilleges.
+* A Django project copied onto the remote server. 
+* For simplicity I am using SQLite as my back-end database.
+* A custom domain pointing to your cloud server(Optional). This domain name is used while setting up Nginx.
+
 
 ### Tasks
 
@@ -7,25 +17,18 @@ Ansible playbooks used to deploy [https://github.com/pattu777/LearningDjango](ht
   * System packages
   * Python packages
 * Setup Django.
-  * Create a virtualenv
-  * Install packages from requirements.txt
-  * Create models.
+  * Create a virtualenv.
+  * Install packages from requirements.txt file.
+  * Create db models.
   * Collect static files.
 * Setup Gunicorn.
   * Customize the conf file.
   * Copy the gunicorn.conf file to the remote server.
   * Restart gunicorn server.
 * Setup Nginx.
-  * Customize the nginx conf file.
-  * Copy the nginx config file to the remote server.
-  * Restart nginx server.
-
-### Prerequisites
-
-* Ansible installed on your local system.
-* Passwordless setup for a user with sudo privilleges.
-* Our Django project copied onto the remote server. 
-* A custom domain pointing to your cloud server.
+  * Customize the Nginx conf file.
+  * Copy the Nginx config file to the remote server.
+  * Restart Nginx server.
 
 ### Developing
 
@@ -43,6 +46,7 @@ $ ansible-playbook -s deploy.yml
 ```
 
 ### TODO
+* A new role for setting up data stores like MySQL, Postgres etc.
 * Check how to run the playbook in sudo mode through ansible.cfg 
 * Clone a Git repository instead of assuming it's already present on the remote server
 
