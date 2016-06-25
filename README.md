@@ -1,6 +1,7 @@
 # Ansible-Django
 Ansible playbooks used to deploy a Django project on a remote server. This playbook assumes the remote server to be debian based. I used it to deploy [https://github.com/pattu777/LearningDjango](https://github.com/pattu777/LearningDjango) project on a Digital Ocean droplet. 
 
+Also checkout my post [http://www.chinmayapatanaik.com/2016/06/25/Ansible-Django/](http://www.chinmayapatanaik.com/2016/06/25/Ansible-Django/) for more detailed description.
 
 ### Prerequisites
 
