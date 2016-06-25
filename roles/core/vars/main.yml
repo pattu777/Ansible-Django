@@ -23,4 +23,5 @@ system_packages:
   - libxml2-dev 
   - libxslt1-dev
   - tree
+  - wget
   - ipython
