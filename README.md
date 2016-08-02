@@ -5,7 +5,7 @@ Ansible playbooks used to deploy a Django project on a remote server. This playb
 
 Also checkout my post [http://www.chinmayapatanaik.com/2016/06/25/Ansible-Django/](http://www.chinmayapatanaik.com/2016/06/25/Ansible-Django/) for more detailed description.
 
-### Prerequisites
+# Prerequisites
 
 * Ansible installed on your local system.
 * Passwordless setup for a user with sudo privilleges.
@@ -14,7 +14,7 @@ Also checkout my post [http://www.chinmayapatanaik.com/2016/06/25/Ansible-Django
 * A custom domain pointing to your cloud server(Optional). This domain name is used while setting up Nginx.
 
 
-### Tasks
+# Tasks
 
 * Install necessary packages.
   * System packages
@@ -33,7 +33,7 @@ Also checkout my post [http://www.chinmayapatanaik.com/2016/06/25/Ansible-Django
   * Copy the Nginx config file to the remote server.
   * Restart Nginx server.
 
-### Developing
+# Developing
 
 Clone the repo. Make sure the prerequisities are met. 
 
@@ -48,7 +48,7 @@ $ cd Ansible-Django
 $ ansible-playbook -s deploy.yml
 ```
 
-### TODO
+# TODO
 * A new role for setting up data stores like MySQL, Postgres etc.
 * Check how to run the playbook in sudo mode through ansible.cfg 
 * Clone a Git repository instead of assuming it's already present on the remote server

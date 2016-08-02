@@ -25,3 +25,8 @@ system_packages:
   - tree
   - wget
   - ipython
+
+
+# Github repository
+project_root: /var/projects/myproject
+project_repo: git@github.com:pattu777/3MW-Django.git
